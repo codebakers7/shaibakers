@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
+import { useEffect } from "react"
 
 export default function EnquiryForm() {
   const [formData, setFormData] = useState({
@@ -16,7 +17,9 @@ export default function EnquiryForm() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState("")
-
+useEffect(() => {
+  window.history.replaceState(null, "", window.location.href)
+}, [])
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {

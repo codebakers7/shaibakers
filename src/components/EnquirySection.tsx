@@ -20,7 +20,7 @@ export default function EnquirySection() {
 
           <div className="flex flex-col gap-4 mt-8 text-stone-600 text-sm">
             <p>📍 12, Baker Street, Chennai - 600001</p>
-            <p>📞 +91 98765 43210</p>
+            <p>📞 +91 8989898989</p>
             <p>✉️ hello@crumbandco.in</p>
             <p>🕐 Mon–Sat: 7am – 7pm</p>
           </div>
