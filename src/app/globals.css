@@ -10,3 +10,26 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
 }
+.fold-section {
+  position: relative;
+  transform-origin: top center;
+  transition: transform 0.1s linear, opacity 0.1s linear;
+  will-change: transform, opacity;
+}
+
+.fold-section.folding {
+  transform: perspective(1200px) rotateX(-15deg) scale(0.97);
+  opacity: 0;
+}
+.fold-section:nth-child(1) { z-index: 5; }
+.fold-section:nth-child(2) { z-index: 4; }
+.fold-section:nth-child(3) { z-index: 3; }
+.fold-section:nth-child(4) { z-index: 2; }
+
+
+.fold-section {
+  position: sticky;
+  top: 0;
+  transform-origin: top center;
+  will-change: transform, opacity;
+}

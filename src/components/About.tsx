@@ -23,7 +23,7 @@ const values = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-amber-50 px-6">
+      <section id="about" className="py-24 bg-stone-800 px-6">  
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
         {/* Left - image placeholder */}
@@ -37,10 +37,10 @@ export default function About() {
             <span className="text-amber-500 font-medium text-sm uppercase tracking-wide">
               Our story
             </span>
-            <h2 className="text-4xl font-bold text-stone-800 mt-2">
+            <h2 className="text-4xl font-bold text-white mt-2">
               Baking since 1987
             </h2>
-            <p className="text-stone-500 mt-4 leading-relaxed">
+            <p className="text-stone-400 mt-4 leading-relaxed">
               What started as a small family kitchen in Chennai has grown 
               into a beloved neighbourhood bakery. We still use the same 
               recipes, the same oven, and the same love.
@@ -53,8 +53,8 @@ export default function About() {
                 <CardContent className="p-4 flex items-start gap-4">
                   <span className="text-2xl">{value.emoji}</span>
                   <div>
-                    <h3 className="font-semibold text-stone-800">{value.title}</h3>
-                    <p className="text-stone-500 text-sm mt-1">{value.description}</p>
+                    <h3 className="font-semibold text-white">{value.title}</h3>
+                    <p className="text-stone-400 text-sm mt-1">{value.description}</p>
                   </div>
                 </CardContent>
               </Card>

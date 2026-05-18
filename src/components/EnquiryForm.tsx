@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { useEffect } from "react"
+
 
 export default function EnquiryForm() {
   const [formData, setFormData] = useState({
@@ -17,9 +17,7 @@ export default function EnquiryForm() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState("")
-useEffect(() => {
-  window.history.replaceState(null, "", window.location.href)
-}, [])
+
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
@@ -49,8 +47,9 @@ useEffect(() => {
     if (error) {
       setError("Something went wrong. Please try again.")
     } else {
-      setSuccess(true)
-    }
+  setFormData({ name: "", email: "", phone: "", message: "" })
+  setSuccess(true)
+}
   }
 
   if (success) {
@@ -68,35 +67,38 @@ useEffect(() => {
   }
 
   return (
-    <Card className="border-stone-100 shadow-sm">
+    <Card className="border-stone-700 bg-stone-800 shadow-xl shadow-black/20">
       <CardContent className="p-8 flex flex-col gap-4">
-        <Input
-          name="name"
-          placeholder="Your name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <Input
-          name="email"
-          type="email"
-          placeholder="Your email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <Input
-          name="phone"
-          placeholder="Phone number (optional)"
-          value={formData.phone}
-          onChange={handleChange}
-        />
-        <Textarea
-          name="message"
-          placeholder="Tell us what you need — custom cake, bulk order, catering..."
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-        />
-
+     <Input
+  name="name"
+  placeholder="Your name"
+  value={formData.name}
+  onChange={handleChange}
+  className="bg-stone-700 border-stone-600 text-white placeholder:text-stone-400 focus:border-amber-500"
+/>
+<Input
+  name="email"
+  type="email"
+  placeholder="Your email"
+  value={formData.email}
+  onChange={handleChange}
+  className="bg-stone-700 border-stone-600 text-white placeholder:text-stone-400 focus:border-amber-500"
+/>
+<Input
+  name="phone"
+  placeholder="Phone number (optional)"
+  value={formData.phone}
+  onChange={handleChange}
+  className="bg-stone-700 border-stone-600 text-white placeholder:text-stone-400 focus:border-amber-500"
+/>
+<Textarea
+  name="message"
+  placeholder="Tell us what you need — custom cake, bulk order, catering..."
+  rows={4}
+  value={formData.message}
+  onChange={handleChange}
+  className="bg-stone-700 border-stone-600 text-white placeholder:text-stone-400 focus:border-amber-500"
+/>
         {error && (
           <p className="text-red-500 text-sm">{error}</p>
         )}
